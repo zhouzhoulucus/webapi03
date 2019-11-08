@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<!--div下面是有三个子节点的-->
+<div id="dv">
+    <span>这是div中的第一个span标签</span>
+
+    <p>这是div中的第二个元素,第一个p标签</p>
+    <ul id="uu">
+        <li>乔峰</li>
+        <li>鹿茸</li>
+        <li id="three">段誉</li>
+        <li>卡卡西</li>
+        <li>雏田</li>
+    </ul>
+</div>
+
+<script src="common.js"></script>
+<script>
+    var ulObj = my$("uu");
+    // 在页面中只有标签可以作为父节点,父级元素
+    // 获取ul的父级节点
+    //    console.log(ulObj.parentNode);
+
+    // 获取ul的父级元素
+    //    console.log(ulObj.parentElement)
+
+    // 获取 nodeType nodeName nodeValue
+    console.log(ulObj.parentNode.nodeType) // 标签的 nodeType ----1
+    console.log(ulObj.parentNode.nodeName) // 标签的 nodeName  大写的标签名字
+    console.log(ulObj.parentNode.nodeValue) // 标签的 nodeValue ---null
+
+    console.log(ulObj.parentNode)  // div整个标签
+    console.log(ulObj.parentNode.parentNode) // body整个标签
+    console.log(ulObj.parentNode.parentNode.parentNode) // html整个标签
+    console.log((ulObj.parentNode.parentNode.parentNode.parentNode))
+
+</script>
+</body>
+</html>

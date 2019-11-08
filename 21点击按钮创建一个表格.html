@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="创建表格" id="btn"/>
+<div id="dv"></div>
+
+<script src="common.js"></script>
+<script>
+
+    var arr = [
+        {name:"百度", href:"https://www.baidu.com"},
+        {name:"优酷", href:"https://www.youku.com"},
+        {name:"土豆", href:"https://www.tudou.com"},
+        {name:"快播", href:"https://www.kuaibo.com"},
+        {name:"爱奇艺", href:"https://www.aiqiyi.com"},
+        {name:"谷歌", href:"https://www.google.cn"}
+    ];
+
+    // 点击按钮创建表格
+    my$("btn").onclick=function(){
+        // 在div中 创建table标签
+        var tableObj = document.createElement("table")
+        tableObj.border = "1";
+        tableObj.cellPadding="0";
+        tableObj.cellSpacing="0";
+        my$("dv").appendChild(tableObj);
+
+        // 开启for循环, 往table里面添加行
+        for(var i=0;i<arr.length;i++){
+            var trObj = document.createElement("tr");
+            tableObj.appendChild(trObj);
+
+            // 为每一行创建两列,并在列里面添加数据
+            var td1 = document.createElement("td");
+            // 在td1里面添加元素
+            td1.innerText=arr[i].name;
+            // 将td1添加到 当前行作为列
+            trObj.appendChild(td1);
+            var td2 = document.createElement("td");
+            // 往td2里面添加元素
+            td2.innerHTML="<a "+arr[i].href+">"+arr[i].name+"</a>";
+            // 将td2添加到当前行作为列
+            trObj.appendChild(td2);
+        }
+
+    };
+
+</script>
+</body>
+</html>

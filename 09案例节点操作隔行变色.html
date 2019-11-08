@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        ul{
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="变色" id="btn"/>
+<ul id="uu">
+    <li>爆炒助教</li>
+    <li>油炸班主任</li>
+    <li>清蒸小苏</li>
+    <li>红烧班长</li>
+    <li>红烧肉</li>
+    <li>糖醋排骨</li>
+    <li>凉拌秋葵</li>
+    <li>鱼香胡萝卜</li>
+</ul>
+
+<script src="common.js"></script>
+<script>
+    // 节点操作 实现隔行变色
+    // 隔行变色
+    my$("btn").onclick=function(){
+        // 获取ul中所有子元素
+        var nodes = my$("uu").childNodes;
+//        var nodes = my$("uu").children;
+        // 遍历所有的node
+        var count =0;
+        for(var i=0;i<nodes.length;i++){
+            var node = nodes[i];
+            if(node.nodeType == 1 && node.nodeName =="LI"){
+                // 这里实现隔行变色
+//                node.style.backgroundColor=i%2==0?"blue":"yellow";
+                node.style.backgroundColor=count%2==0?"blue":"yellow";
+                count++;
+            }
+        }
+    };
+
+</script>
+</body>
+</html>

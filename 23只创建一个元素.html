@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="显示效果" id="btn"/>
+
+<div id="dv"></div>
+<script src="common.js"></script>
+<script>
+    // 先判断有没有, 有就删除
+    //    my$("btn").onclick=function(){
+    //        if(my$("btn2")){
+    //            my$("dv").removeChild(my$("btn2"));
+    //        }
+    //        var obj = document.createElement("input");
+    //        obj.type="button";
+    //        obj.value="按钮";
+    //        obj.id="btn2"
+    //        my$("dv").appendChild(obj);
+    //    };
+
+    // 判断如果没有 就创建
+    my$("btn").onclick=function(){
+        if(!my$("btn2")){
+            var obj = document.createElement("input");
+            obj.type="button";
+            obj.value="按钮"
+            obj.id="btn2";
+            // 将创建好的按钮 添加到div标签中
+            my$("dv").appendChild(obj);
+        }
+    };
+
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="button" value="创建一个p" id="btn"/>
+<div id="dv"></div>
+
+<script src="common.js"></script>
+<script>
+    // 第二种方式创建元素 对象.innerHTML="标签代码及内容"方式
+    // 点击按钮, div中创建一个p标签
+    my$("btn").onclick=function(){
+        my$("dv").innerHTML="<p>这是一个p</p>"
+    };
+
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="button" value="显示效果" id="btn"/>
+
+<script src="common.js"></script>
+<script>
+
+    myAddEventListener(my$("btn"),"click",function(){
+       console.log("小苏还帅0");
+    });
+    myAddEventListener(my$("btn"),"click",function(){
+        console.log("小苏还帅1");
+    });
+    myAddEventListener(my$("btn"),"click",function(){
+        console.log("小苏还帅2");
+    });
+    myAddEventListener(my$("btn"),"click",function(){
+        console.log("小苏还帅3");
+    });
+
+    // 判断一个对象中 有没有某个方法
+    //    function Person(name){
+    //        this.name = name;
+    //        this.sayHi=function(){
+    //            console.log("您好呀")
+    //        };
+    //    }
+    //    // 判断对象中有没有sayHi这个方法
+    //    // 首先创建一个person对象
+    //    var per = new Person("hehe")
+    ////    per["sayHi"]();
+    ////    per.sayHi();
+    //    if(per.sayHi){
+    //        per.sayHi();
+    //    }else{
+    //        console.log("没有这个方法")
+    //    }
+
+</script>
+</body>
+</html>

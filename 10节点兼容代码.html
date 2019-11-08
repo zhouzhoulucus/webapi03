@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+
+<script src="common.js"></script>
+<script>
+
+    // element.firstChild ---> 对于谷歌和火狐来说是第一个子节点
+    // element.firstChild ---> 对于IE8来说,获取的是第一个子元素
+    // element.firstElementChild ---> 谷歌和火狐是第一个子元素,IE8不支持
+    function getFirstElementChild(element){
+        if(element.firstElementChild){
+            return element.firstElementChild;
+        }else{
+            // 获取第一个子节点
+            var node = element.firstChild;
+            if(node && node.nodeType !=1){
+                node = node.nextSibling;
+            }
+            return node;
+        }
+    }
+
+</script>
+</body>
+</html>

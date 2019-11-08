@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {
+            width: 300px;
+            height: 500px;
+            border: 10px solid red;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="变色" id="btn"/>
+
+<div id="dv">
+    <span>这是span</span>
+
+    <p>这是p</p>
+    <span>这是span</span>
+
+    <p>这是p</p>
+    <span>这是span</span>
+
+    <p>这是p</p>
+    <span>这是span</span>
+    <a href="https://www.baidu.com"></a>
+</div>
+<script src="common.js"></script>
+<script>
+
+    // 点击 按钮设置p变色 ---节点的方式做
+    // 首先获取div
+    var dvObj = my$("dv");
+    // 获取里面的所有子节点
+    var nodes = dvObj.childNodes;
+    // 为btn注册点击事件
+    my$("btn").onclick = function () {
+        // 遍历子节点,获取p标签
+        for (var i = 0; i < nodes.length; i++) {
+            var node = nodes[i];
+            if (node.nodeName == "P" && node.nodeType ==1) {
+                node.style.backgroundColor = "yellow";
+            }
+        }
+    }
+</script>
+</body>
+</html>

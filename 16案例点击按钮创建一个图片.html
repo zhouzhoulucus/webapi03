@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="button" value="创建一个图片" id="btn"/>
+<div id="dv"></div>
+
+
+<script src="common.js"></script>
+<script>
+    /**
+     * innerHMTL创建元素的方式 一般都是把元素放到一个父级元素里面
+     * 而不是直接使用 document.body 来创建元素
+     */
+    my$("btn").onclick=function(){
+//        document.body.innerHTML="<p>这是一个p</p>";
+        my$("dv").innerHTML="<img src='images/liuyan.jpg' alt='美女'/>";
+    };
+
+</script>
+</body>
+</html>

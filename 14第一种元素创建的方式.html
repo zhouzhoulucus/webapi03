@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="button" value="创建一个p" id="btn"/>
+小苏是一个快乐的小男孩,人家今年才38岁, 好帅哦
+<script src="common.js"></script>
+<script>
+    // document.write("标签代码及内容");
+    // 点击按钮创建一个p标签
+    my$("btn").onclick=function(){
+        document.write("<p>这是一个p<p>");
+    };
+
+    // document.write() 创建元素, 缺陷; 如果是在页面加载完毕后,
+    // 此时通过这种方式创建元素, 那么页面上存在的所有内容都被干掉了,包括body里面的东西都被干掉了
+
+    // 页面加载的时候 通过这种方式创建元素 元素是存在的
+    // 当页面加载完毕后, 通过这种方式创建元素, 里面其他的所有元素都会被干掉的
+//    document.write("<p>这是一个p<p>");
+</script>
+</body>
+</html>

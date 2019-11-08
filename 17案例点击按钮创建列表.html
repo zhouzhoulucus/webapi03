@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {
+            width: 300px;
+            height: 400px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="创建列表" id="btn"/>
+
+<div id="dv"></div>
+
+
+<script src="common.js"></script>
+<script>
+    // 显示不动的数据
+    //    my$("btn").onclick=function(){
+    //        my$("dv").innerHTML="<ul><li>杨过</li><li>小孔女</li><li>古天乐</li><li>丘处机</li></ul>"
+    //    };
+
+    // 显示动态添加数据
+    var names = ["杨过", "郭靖", "张无忌", "张三丰", "乔峰", "段飞", "丁棚"];
+    my$("btn").onclick = function () {
+        var str = "<ul style='list-style-type: none; cursor: pointer' >";
+        // 开启for循环遍历 数组,将数组添加进去
+        for (var i = 0; i < names.length; i++) {
+            str += "<li>" + names[i] + "</li>";
+        }
+        str += "</ul>";
+
+        // 将创建好的元素放到div标签里面去
+        my$("dv").innerHTML = str;
+
+        // 走到这里说明, div中有li标签了
+        // 为每个li标签添加 鼠标划上去和鼠标离开事件
+        var list = my$("dv").getElementsByTagName("li");
+        for (var j = 0; j < list.length; j++) {
+            list[j].onmousemove = function () {
+                this.style.backgroundColor = "yellow";
+            };
+            list[j].onmouseout = function () {
+                this.style.backgroundColor = "";
+            };
+        }
+    };
+
+
+</script>
+</body>
+</html>

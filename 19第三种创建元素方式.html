@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 100px;
+            height: 150px;
+            border: 2px dashed pink;
+        }
+
+    </style>
+</head>
+<body>
+<input type="button" value="创建一个按钮" id="btn"/>
+<div id="dv"></div>
+
+<script src="common.js"></script>
+<script>
+    // 第三种方式:
+    // 创建元素
+    // document.createElement("标签名字") 返回的是一个对象
+    // 把创建的好的元素追加到父级元素中
+
+    // 点击按钮在 div标签中创建一个p元素
+    my$("btn").onclick=function(){
+        // 创建元素
+        var ele = document.createElement("p");
+        // 设置元素里面内容
+        ele.innerText="这是一个p";
+        // 追加到div这个父级元素中
+        my$("dv").appendChild(ele);
+
+    };
+
+</script>
+</body>
+</html>
